@@ -4,6 +4,7 @@ import { LayoutDashboard, UtensilsCrossed, Factory, Users, LifeBuoy, LogOut, Loa
 import { useAuth } from "@/lib/auth";
 import { Logo } from "@/components/site/Logo";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export const Route = createFileRoute("/admin")({
   component: AdminLayout,
@@ -105,6 +106,7 @@ function AdminLayout() {
             ))}
           </nav>
           <div className="ml-auto flex items-center gap-3">
+            <ThemeToggle />
             <span className="hidden text-sm text-muted-foreground md:inline">{user.email}</span>
             <Button
               variant="outline"

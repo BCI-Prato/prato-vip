@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function SiteHeader() {
   function scrollToPacotes(e: React.MouseEvent<HTMLAnchorElement>) {
@@ -22,6 +23,7 @@ export function SiteHeader() {
           <a href="#pacotes" className="hover:text-foreground">Pacotes</a>
         </nav>
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <Button asChild size="sm" className="hidden md:inline-flex rounded-full bg-primary-soft text-primary hover:bg-primary-soft/80">
             <Link to="/login">Já sou cliente</Link>
           </Button>

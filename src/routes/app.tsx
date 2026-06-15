@@ -5,6 +5,7 @@ import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app/AppSidebar";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export const Route = createFileRoute("/app")({
   component: ClientAppLayout,
@@ -41,6 +42,7 @@ function ClientAppLayout() {
           <header className="sticky top-0 z-10 flex h-14 items-center gap-3 border-b border-border/70 bg-background/85 px-4 backdrop-blur md:px-6">
             <SidebarTrigger />
             <div className="ml-auto flex items-center gap-3">
+              <ThemeToggle />
               <span className="hidden text-sm text-muted-foreground md:inline">
                 {user.email}
               </span>
