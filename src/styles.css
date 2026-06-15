@@ -1,0 +1,205 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Pratô — Design system
+ * Paleta da marca: laranja #E85A1F, verde #0E6B3A.
+ * Tokens em oklch para acessibilidade. Tipografia Inter.
+ */
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-foreground: var(--brand-green-foreground);
+  --color-brand-green-soft: var(--brand-green-soft);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.04), 0 8px 24px oklch(0 0 0 / 0.06);
+  --shadow-card: 0 1px 2px oklch(0 0 0 / 0.05), 0 12px 32px -8px oklch(0 0 0 / 0.08);
+  --shadow-glow: 0 20px 60px -20px color-mix(in oklab, var(--primary) 35%, transparent);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Neutros */
+  --background: oklch(0.995 0.005 80);          /* #FBFAF7 quente */
+  --foreground: oklch(0.22 0.02 50);            /* texto principal */
+  --surface: oklch(1 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.02 50);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.02 50);
+
+  /* Marca: laranja Pratô */
+  --primary: oklch(0.66 0.18 38);               /* ~#E85A1F */
+  --primary-foreground: oklch(1 0 0);
+  --primary-soft: oklch(0.96 0.04 40);
+
+  /* Marca: verde Pratô */
+  --brand-green: oklch(0.46 0.13 155);          /* ~#0E6B3A */
+  --brand-green-foreground: oklch(1 0 0);
+  --brand-green-soft: oklch(0.95 0.04 155);
+
+  /* Secundário/neutros */
+  --secondary: oklch(0.97 0.01 80);
+  --secondary-foreground: oklch(0.22 0.02 50);
+  --muted: oklch(0.96 0.01 80);
+  --muted-foreground: oklch(0.5 0.02 60);
+  --accent: oklch(0.96 0.04 40);                /* laranja suave */
+  --accent-foreground: oklch(0.66 0.18 38);
+
+  --success: oklch(0.62 0.14 155);
+  --success-foreground: oklch(1 0 0);
+  --warning: oklch(0.78 0.16 75);
+  --warning-foreground: oklch(0.22 0.02 50);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.91 0.01 70);
+  --input: oklch(0.91 0.01 70);
+  --ring: oklch(0.66 0.18 38);
+
+  --chart-1: oklch(0.66 0.18 38);
+  --chart-2: oklch(0.46 0.13 155);
+  --chart-3: oklch(0.78 0.16 75);
+  --chart-4: oklch(0.6 0.1 240);
+  --chart-5: oklch(0.55 0.15 320);
+
+  --sidebar: oklch(0.99 0.005 80);
+  --sidebar-foreground: oklch(0.22 0.02 50);
+  --sidebar-primary: oklch(0.66 0.18 38);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.96 0.04 40);
+  --sidebar-accent-foreground: oklch(0.22 0.02 50);
+  --sidebar-border: oklch(0.91 0.01 70);
+  --sidebar-ring: oklch(0.66 0.18 38);
+}
+
+.dark {
+  --background: oklch(0.18 0.015 50);
+  --foreground: oklch(0.97 0.01 80);
+  --surface: oklch(0.22 0.02 50);
+  --card: oklch(0.22 0.02 50);
+  --card-foreground: oklch(0.97 0.01 80);
+  --popover: oklch(0.22 0.02 50);
+  --popover-foreground: oklch(0.97 0.01 80);
+  --primary: oklch(0.72 0.18 40);
+  --primary-foreground: oklch(0.18 0.015 50);
+  --primary-soft: oklch(0.3 0.06 40);
+  --brand-green: oklch(0.6 0.15 155);
+  --brand-green-foreground: oklch(0.18 0.015 50);
+  --brand-green-soft: oklch(0.28 0.06 155);
+  --secondary: oklch(0.27 0.02 50);
+  --secondary-foreground: oklch(0.97 0.01 80);
+  --muted: oklch(0.27 0.02 50);
+  --muted-foreground: oklch(0.7 0.02 70);
+  --accent: oklch(0.3 0.06 40);
+  --accent-foreground: oklch(0.97 0.01 80);
+  --success: oklch(0.6 0.14 155);
+  --success-foreground: oklch(0.18 0.015 50);
+  --warning: oklch(0.78 0.16 75);
+  --warning-foreground: oklch(0.18 0.015 50);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.72 0.18 40);
+  --sidebar: oklch(0.22 0.02 50);
+  --sidebar-foreground: oklch(0.97 0.01 80);
+  --sidebar-primary: oklch(0.72 0.18 40);
+  --sidebar-primary-foreground: oklch(0.18 0.015 50);
+  --sidebar-accent: oklch(0.3 0.06 40);
+  --sidebar-accent-foreground: oklch(0.97 0.01 80);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.72 0.18 40);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  aside { display: none !important; }
+  header { display: none !important; }
+  main { padding: 0 !important; }
+  body, html { background: white !important; }
+}
+
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.no-spinner { -moz-appearance: textfield; }
+
+.legal-content h2 { font-size: 1.25rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.legal-content p { margin-top: 0.75rem; text-align: justify; }
+.legal-content ul { list-style: disc; padding-left: 1.5rem; margin-top: 0.5rem; }
+.legal-content ul ul { list-style: circle; margin-top: 0.25rem; }
+.legal-content li { margin-top: 0.25rem; text-align: justify; }
+.legal-content strong { font-weight: 600; }
