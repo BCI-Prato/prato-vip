@@ -182,7 +182,7 @@ function PagamentoPage() {
             <div className="mt-8 text-center">
               <Link
                 to="/app"
-                className="inline-flex items-center justify-center gap-1 text-sm text-gray-500 transition-colors hover:text-gray-800"
+                className="inline-flex items-center justify-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 Ir para o painel do cliente
                 <ArrowRight className="h-4 w-4" />
@@ -192,6 +192,4 @@ function PagamentoPage() {
         </div>
       </main>
       <SiteFooter />
-    </div>
-  );
-}
+    </di

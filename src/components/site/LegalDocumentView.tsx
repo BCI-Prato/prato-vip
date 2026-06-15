@@ -39,7 +39,7 @@ export function LegalDocumentView({ slug, fallbackTitle }: { slug: string; fallb
             {doc?.title ?? fallbackTitle}
           </h1>
           {doc && (
-            <p className="mt-3 text-sm text-gray-500">
+            <p className="mt-3 text-sm text-muted-foreground">
               Última atualização: {formatLegalDate(doc.updated_at)}
             </p>
           )}
@@ -66,5 +66,3 @@ export function LegalDocumentView({ slug, fallbackTitle }: { slug: string; fallb
       </main>
       <SiteFooter />
     </div>
-  );
-}

@@ -77,7 +77,7 @@ function Hero() {
           <Badge className="mb-5 bg-primary-soft text-primary hover:bg-primary-soft">
             Alimentação corporativa B2B
           </Badge>
-          <h1 className="text-3xl font-extrabold tracking-tight text-black text-left md:text-4xl md:text-justify">
+          <h1 className="text-3xl font-extrabold tracking-tight text-foreground text-left md:text-4xl md:text-justify">
             Seu time <span className="text-primary">mais saudável,</span>
             <br />
             sua empresa <span className="text-brand-green">mais forte.</span>
@@ -186,7 +186,7 @@ function HowItWorks() {
         <SectionHeader eyebrow="Como funciona" title="Em três passos simples." />
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {steps.map((s) => (
-            <div key={s.n} className="relative rounded-2xl border border-border/70 p-6 shadow-soft border-lime-50 bg-white">
+            <div key={s.n} className="relative rounded-2xl border border-border/70 p-6 shadow-soft bg-card">
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-green text-lg font-bold text-brand-green-foreground">
                   {s.n}
@@ -302,8 +302,8 @@ function PackageCard({ pkg }: { pkg: Package }) {
           {pkg.highlight_tag}
         </span>
       )}
-      <h3 className="mt-1 text-sm text-muted-foreground text-center text-gray-500">{pkg.name}</h3>
-      <p className="mt-1 text-sm text-muted-foreground text-center text-gray-500">
+      <h3 className="mt-1 text-sm text-muted-foreground text-center">{pkg.name}</h3>
+      <p className="mt-1 text-sm text-muted-foreground text-center">
         <span
           className={`block font-bold text-5xl ${
             isPremium ? "text-brand-green" : "text-orange-500"
@@ -315,7 +315,7 @@ function PackageCard({ pkg }: { pkg: Package }) {
       </p>
       <div className="mt-4">
         <div className="font-extrabold text-foreground text-2xl text-center">{formatBRL(pkg.total_price)}</div>
-        <div className="mt-1 text-sm text-muted-foreground text-center text-gray-500">{pkg.price_per_meal_text}</div>
+        <div className="mt-1 text-sm text-muted-foreground text-center">{pkg.price_per_meal_text}</div>
       </div>
       {(pkg.features?.length ? pkg.features : pkg.bonuses)?.length ? (
         <div className="mt-5 border-t border-border/60 pt-4">
@@ -396,8 +396,9 @@ function SectionHeader({
   return (
     <div className={`max-w-3xl ${cls}`}>
       <p className="text-sm font-semibold uppercase tracking-wider text-primary">{eyebrow}</p>
-      <h2 className={`mt-2 text-[26px] font-extrabold tracking-tight text-gray-800 md:text-2xl ${align === "center" ? "text-center" : "text-left"}`}>{title}</h2>
+      <h2 className={`mt-2 text-[26px] font-extrabold tracking-tight text-foreground md:text-2xl ${align === "center" ? "text-center" : "text-left"}`}>{title}</h2>
       {subtitle && <p className="mt-2 text-muted-foreground text-xs">{subtitle}</p>}
     </div>
   );
 }
+                                                   
