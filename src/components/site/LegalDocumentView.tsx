@@ -66,3 +66,5 @@ export function LegalDocumentView({ slug, fallbackTitle }: { slug: string; fallb
       </main>
       <SiteFooter />
     </div>
+  );
+}

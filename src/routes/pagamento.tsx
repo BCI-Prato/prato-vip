@@ -192,4 +192,6 @@ function PagamentoPage() {
         </div>
       </main>
       <SiteFooter />
-    </di
+    </div>
+  );
+}
